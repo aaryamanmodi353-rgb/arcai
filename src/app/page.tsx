@@ -99,20 +99,23 @@ export default async function LandingPage() {
               <p className="text-[#8c94a0] text-lg leading-relaxed">
                 Manage your luxury inventory with unparalleled intelligence. Arc's Deal Room automatically sorts your pipeline based on AI-calculated intent scores (0-99).
               </p>
-              <ul className="space-y-8 mt-10 inline-block w-full">
-                <li className="flex flex-col items-center gap-3 text-[#a0a8b5]">
-                  <div className="text-[#75c994] bg-[#75c994]/10 p-2 rounded-full"><Icon name="check" size={20} /></div>
-                  <div><strong className="text-white font-oswald tracking-wide uppercase text-sm block mb-1.5">Automated Qualification</strong> The AI extracts missing criteria, budget, and timeline instantly from every lead.</div>
-                </li>
-                <li className="flex flex-col items-center gap-3 text-[#a0a8b5]">
-                  <div className="text-[#75c994] bg-[#75c994]/10 p-2 rounded-full"><Icon name="check" size={20} /></div>
-                  <div><strong className="text-white font-oswald tracking-wide uppercase text-sm block mb-1.5">Autonomous Agents</strong> Instruct an AI agent to call or email clients on your behalf. Arc updates the CRM automatically.</div>
-                </li>
-                <li className="flex flex-col items-center gap-3 text-[#a0a8b5]">
-                  <div className="text-[#75c994] bg-[#75c994]/10 p-2 rounded-full"><Icon name="check" size={20} /></div>
-                  <div><strong className="text-white font-oswald tracking-wide uppercase text-sm block mb-1.5">Real-Time Sync</strong> The moment you approve a deal, the customer's portal updates instantly with a glowing success timeline.</div>
-                </li>
-              </ul>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 w-full">
+                <div className="flex flex-col items-center text-center gap-4 text-[#a0a8b5] bg-[#11151c]/40 border border-white/5 rounded-xl p-6 backdrop-blur-sm hover:bg-[#11151c]/60 transition-colors">
+                  <div className="text-[#75c994] bg-[#75c994]/10 p-3 rounded-full"><Icon name="check" size={24} /></div>
+                  <strong className="text-white font-oswald tracking-wide uppercase text-sm">Automated Qualification</strong> 
+                  <p className="text-sm leading-relaxed">The AI extracts missing criteria, budget, and timeline instantly from every lead.</p>
+                </div>
+                <div className="flex flex-col items-center text-center gap-4 text-[#a0a8b5] bg-[#11151c]/40 border border-white/5 rounded-xl p-6 backdrop-blur-sm hover:bg-[#11151c]/60 transition-colors">
+                  <div className="text-[#75c994] bg-[#75c994]/10 p-3 rounded-full"><Icon name="check" size={24} /></div>
+                  <strong className="text-white font-oswald tracking-wide uppercase text-sm">Autonomous Agents</strong> 
+                  <p className="text-sm leading-relaxed">Instruct an AI agent to call or email clients on your behalf. Arc updates the CRM automatically.</p>
+                </div>
+                <div className="flex flex-col items-center text-center gap-4 text-[#a0a8b5] bg-[#11151c]/40 border border-white/5 rounded-xl p-6 backdrop-blur-sm hover:bg-[#11151c]/60 transition-colors">
+                  <div className="text-[#75c994] bg-[#75c994]/10 p-3 rounded-full"><Icon name="check" size={24} /></div>
+                  <strong className="text-white font-oswald tracking-wide uppercase text-sm">Real-Time Sync</strong> 
+                  <p className="text-sm leading-relaxed">The moment you approve a deal, the customer's portal updates instantly with a glowing success timeline.</p>
+                </div>
+              </div>
             </div>
             <div className="w-full max-w-2xl bg-[#11151c]/60 border border-white/5 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden text-center">
               <div className="absolute top-0 right-0 w-64 h-64 bg-[#e8a33b]/10 rounded-full blur-[80px]"></div>
@@ -147,20 +150,23 @@ export default async function LandingPage() {
               <p className="text-[#8c94a0] text-lg leading-relaxed">
                 Step into a world-class customer dashboard wrapped in dark glassmorphic aesthetics. Apply for properties, track your deals in real-time, and get matched using natural language.
               </p>
-              <ul className="space-y-8 mt-10 inline-block w-full">
-                <li className="flex flex-col items-center gap-3 text-[#a0a8b5]">
-                  <div className="text-[#75c994] bg-[#75c994]/10 p-2 rounded-full"><Icon name="check" size={20} /></div>
-                  <div><strong className="text-white font-oswald tracking-wide uppercase text-sm block mb-1.5">Natural Language Matching</strong> Don't just click filters. Type exactly what you want (e.g., "Sea-facing duplex under ₹ 20 Cr"), and Arc finds it.</div>
-                </li>
-                <li className="flex flex-col items-center gap-3 text-[#a0a8b5]">
-                  <div className="text-[#75c994] bg-[#75c994]/10 p-2 rounded-full"><Icon name="check" size={20} /></div>
-                  <div><strong className="text-white font-oswald tracking-wide uppercase text-sm block mb-1.5">Live Timelines</strong> Track your application from 'Under Review' to 'Deal Approved' with instant synchronization.</div>
-                </li>
-                <li className="flex flex-col items-center gap-3 text-[#a0a8b5]">
-                  <div className="text-[#75c994] bg-[#75c994]/10 p-2 rounded-full"><Icon name="check" size={20} /></div>
-                  <div><strong className="text-white font-oswald tracking-wide uppercase text-sm block mb-1.5">Urgent Escalation</strong> Found the perfect home? Click "Request Urgent Attention" to instantly notify the broker on their dashboard.</div>
-                </li>
-              </ul>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 w-full">
+                <div className="flex flex-col items-center text-center gap-4 text-[#a0a8b5] bg-[#11151c]/40 border border-white/5 rounded-xl p-6 backdrop-blur-sm hover:bg-[#11151c]/60 transition-colors">
+                  <div className="text-[#75c994] bg-[#75c994]/10 p-3 rounded-full"><Icon name="check" size={24} /></div>
+                  <strong className="text-white font-oswald tracking-wide uppercase text-sm">Natural Language Matching</strong> 
+                  <p className="text-sm leading-relaxed">Don't just click filters. Type exactly what you want (e.g., "Sea-facing duplex under ₹ 20 Cr"), and Arc finds it.</p>
+                </div>
+                <div className="flex flex-col items-center text-center gap-4 text-[#a0a8b5] bg-[#11151c]/40 border border-white/5 rounded-xl p-6 backdrop-blur-sm hover:bg-[#11151c]/60 transition-colors">
+                  <div className="text-[#75c994] bg-[#75c994]/10 p-3 rounded-full"><Icon name="check" size={24} /></div>
+                  <strong className="text-white font-oswald tracking-wide uppercase text-sm">Live Timelines</strong> 
+                  <p className="text-sm leading-relaxed">Track your application from 'Under Review' to 'Deal Approved' with instant synchronization.</p>
+                </div>
+                <div className="flex flex-col items-center text-center gap-4 text-[#a0a8b5] bg-[#11151c]/40 border border-white/5 rounded-xl p-6 backdrop-blur-sm hover:bg-[#11151c]/60 transition-colors">
+                  <div className="text-[#75c994] bg-[#75c994]/10 p-3 rounded-full"><Icon name="check" size={24} /></div>
+                  <strong className="text-white font-oswald tracking-wide uppercase text-sm">Urgent Escalation</strong> 
+                  <p className="text-sm leading-relaxed">Found the perfect home? Click "Request Urgent Attention" to instantly notify the broker on their dashboard.</p>
+                </div>
+              </div>
             </div>
             <div className="w-full max-w-2xl bg-[#11151c]/60 border border-white/5 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden text-center">
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-[80px]"></div>
