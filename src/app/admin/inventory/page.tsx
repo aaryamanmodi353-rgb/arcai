@@ -152,7 +152,13 @@ export default function InventoryManagement() {
           ) : (
             <div key={p._id} className="panel p-6 flex flex-col md:flex-row gap-6 items-start">
               <div className="w-48 h-32 rounded-lg overflow-hidden shrink-0">
-                <img src={p.images?.[0] || 'https://via.placeholder.com/300'} className="w-full h-full object-cover" />
+                <img 
+                  src={p.images?.[0] || 'https://via.placeholder.com/300'} 
+                  className="w-full h-full object-cover" 
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80';
+                  }}
+                />
               </div>
               <div className="flex-1">
                 <h3 className="text-xl text-white font-serif">{p.name}</h3>
