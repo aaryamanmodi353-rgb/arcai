@@ -57,7 +57,7 @@ export default async function LandingPage() {
       <main className="flex-1 flex flex-col items-center pt-40 lg:pt-52 px-5 text-center relative z-10 w-full max-w-[1400px] mx-auto">
         <span className="eyebrow mb-6 text-[#f3bd65] tracking-[0.3em] bg-[#f3bd65]/10 px-4 py-1.5 rounded-full border border-[#f3bd65]/20">The Future of High-End Real Estate</span>
         <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight leading-[1.05] mb-8 max-w-5xl text-white drop-shadow-2xl">
-          <span style={{ fontFamily: 'var(--font-cursive)' }} className="lowercase font-normal">an intelligent deal room</span> <br className="hidden md:block" />
+          <span style={{ fontFamily: 'var(--font-cursive)' }} className="font-normal">An intelligent deal room</span> <br className="hidden md:block" />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f3bd65] to-[#f9d592]">Powered by AI</span>
         </h1>
         <p className="text-lg md:text-xl text-[#a0a8b5] max-w-3xl mb-14 leading-relaxed font-light">
