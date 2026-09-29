@@ -188,7 +188,7 @@ export default function LeadDetail({ params }: { params: Promise<{ id: string }>
         setShowCloseModal(false);
         setShowSuccessToast(true);
         setTimeout(() => {
-          router.push('/');
+          router.push('/admin');
         }, 2000);
       } catch (e) {
         console.error(e);
@@ -204,7 +204,7 @@ export default function LeadDetail({ params }: { params: Promise<{ id: string }>
       });
       setShowSuccessToast(true);
       setTimeout(() => {
-        router.push('/');
+        router.push('/admin');
       }, 2000);
     } catch (e) {
       console.error(e);
@@ -226,7 +226,7 @@ export default function LeadDetail({ params }: { params: Promise<{ id: string }>
       <div className="mx-auto max-w-[1420px]">
         <div className="mb-5 flex flex-wrap items-center justify-between gap-4">
           <div>
-            <Link href="/">
+            <Link href="/admin">
               <button className="eyebrow mb-3 text-[#858e9b]">← LEAD DIRECTORY / {lead.name.toUpperCase()}</button>
             </Link>
             <div className="flex items-center gap-3">

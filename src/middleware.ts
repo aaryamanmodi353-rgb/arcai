@@ -6,7 +6,7 @@ export async function middleware(request: NextRequest) {
   const token = request.cookies.get('token')?.value;
   const path = request.nextUrl.pathname;
 
-  const publicPaths = ['/login', '/signup'];
+  const publicPaths = ['/login', '/signup', '/'];
   const isPublic = publicPaths.includes(path);
   
   // Skip middleware for static files, API routes, and images
@@ -14,7 +14,8 @@ export async function middleware(request: NextRequest) {
     path.startsWith('/_next') ||
     path.startsWith('/favicon.ico') ||
     path.startsWith('/image.png') ||
-    path.startsWith('/api/')
+    path.startsWith('/api/') ||
+    path.match(/\.(svg|jpg|jpeg|png)$/)
   ) {
     return NextResponse.next();
   }
@@ -32,17 +33,17 @@ export async function middleware(request: NextRequest) {
     const role = (verifiedToken as any).role;
     
     // Redirect logged in users away from auth pages
-    if (isPublic) {
-      if (role === 'admin') return NextResponse.redirect(new URL('/', request.url));
+    if (path === '/login' || path === '/signup') {
+      if (role === 'admin') return NextResponse.redirect(new URL('/admin', request.url));
       if (role === 'customer') return NextResponse.redirect(new URL('/customer', request.url));
     }
 
     // Role-based routing restrictions
     if (path.startsWith('/customer') && role !== 'customer') {
-      return NextResponse.redirect(new URL('/', request.url));
+      return NextResponse.redirect(new URL('/admin', request.url));
     }
 
-    if ((path === '/' || path.startsWith('/leads')) && role !== 'admin') {
+    if ((path.startsWith('/admin') || path.startsWith('/leads')) && role !== 'admin') {
       return NextResponse.redirect(new URL('/customer', request.url));
     }
   }

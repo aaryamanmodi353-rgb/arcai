@@ -20,8 +20,8 @@ export default function Sidebar() {
         <span>Æ</span> Arc
       </div>
       <nav>
-        <Link href="/">
-          <button className={pathname === '/' ? 'active' : ''}>
+        <Link href="/admin">
+          <button className={pathname === '/admin' ? 'active' : ''}>
             <Icon name="dashboard" /> <span>Pipeline</span>
           </button>
         </Link>

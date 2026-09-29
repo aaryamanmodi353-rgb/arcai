@@ -28,7 +28,7 @@ export default function Signup() {
 
     if (res.ok) {
       if (data.role === 'admin') {
-        router.push('/');
+        router.push('/admin');
       } else {
         router.push('/customer');
       }
