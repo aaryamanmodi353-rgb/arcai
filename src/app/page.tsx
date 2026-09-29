@@ -57,7 +57,7 @@ export default async function LandingPage() {
       <main className="flex-1 flex flex-col items-center pt-40 lg:pt-52 px-5 text-center relative z-10 w-full max-w-[1400px] mx-auto">
         <span className="eyebrow mb-6 text-[#f3bd65] tracking-[0.3em] bg-[#f3bd65]/10 px-4 py-1.5 rounded-full border border-[#f3bd65]/20">The Future of High-End Real Estate</span>
         <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight leading-[1.05] mb-8 max-w-5xl text-white drop-shadow-2xl">
-          <span style={{ fontFamily: 'var(--font-cursive)' }} className="font-normal">An intelligent deal room</span> <br className="hidden md:block" />
+          <span style={{ fontFamily: 'var(--font-cursive)' }} className="font-normal">An Intelligent Deal Room</span> <br className="hidden md:block" />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f3bd65] to-[#f9d592]">Powered by AI</span>
         </h1>
         <p className="text-lg md:text-xl text-[#a0a8b5] max-w-3xl mb-14 leading-relaxed font-light">
@@ -81,7 +81,7 @@ export default async function LandingPage() {
           
           {/* Platform Overview */}
           <div className="max-w-4xl mx-auto mb-20">
-            <h2 className="font-display text-4xl md:text-5xl mb-6">How Arc Transforms Real Estate</h2>
+            <h2 style={{ fontFamily: 'var(--font-cursive)' }} className="text-4xl md:text-5xl mb-6 font-normal">How Arc Transforms Real Estate</h2>
             <div className="w-16 h-0.5 bg-[#f3bd65] mx-auto mb-8"></div>
             <p className="text-[#8c94a0] text-lg leading-relaxed">
               Traditional CRMs are static databases. Arc is an active participant in your workflow. By embedding Large Language Models directly into the application pipeline, Arc analyzes intent, categorizes leads, and automates follow-ups, saving brokers countless hours while delivering a concierge-level experience to buyers.
@@ -92,7 +92,7 @@ export default async function LandingPage() {
           <div className="flex flex-col items-center gap-16 max-w-5xl mx-auto">
             <div className="space-y-6 max-w-3xl">
               <div className="eyebrow text-[#f3bd65]">For Brokers & Admins</div>
-              <h3 className="font-display text-4xl lg:text-5xl leading-tight">The Ultimate AI Deal Room</h3>
+              <h3 style={{ fontFamily: 'var(--font-cursive)' }} className="text-4xl lg:text-5xl leading-tight font-normal">The Ultimate AI Deal Room</h3>
               <p className="text-[#8c94a0] text-lg leading-relaxed">
                 Manage your luxury inventory with unparalleled intelligence. Arc's Deal Room automatically sorts your pipeline based on AI-calculated intent scores (0-99).
               </p>
@@ -142,7 +142,7 @@ export default async function LandingPage() {
           <div className="flex flex-col items-center gap-16 max-w-5xl mx-auto">
             <div className="space-y-6 max-w-3xl">
               <div className="eyebrow text-[#f3bd65]">For Luxury Buyers</div>
-              <h3 className="font-display text-4xl lg:text-5xl leading-tight">A Premium Property Portal</h3>
+              <h3 style={{ fontFamily: 'var(--font-cursive)' }} className="text-4xl lg:text-5xl leading-tight font-normal">A Premium Property Portal</h3>
               <p className="text-[#8c94a0] text-lg leading-relaxed">
                 Step into a world-class customer dashboard wrapped in dark glassmorphic aesthetics. Apply for properties, track your deals in real-time, and get matched using natural language.
               </p>
@@ -182,7 +182,7 @@ export default async function LandingPage() {
         
         {/* Final CTA */}
         <div className="w-full max-w-4xl mx-auto text-center border-t border-white/10 pt-20 mb-32">
-          <h2 className="font-display text-4xl mb-6">Ready to elevate your workflow?</h2>
+          <h2 style={{ fontFamily: 'var(--font-cursive)' }} className="text-4xl mb-6 font-normal">Ready to elevate your workflow?</h2>
           <p className="text-[#8c94a0] mb-10 text-lg">Join Arc today and experience the next generation of real estate technology.</p>
           <Link href="/signup" className="inline-block px-12 py-4 bg-white text-[#0a0d12] font-bold tracking-widest rounded hover:bg-gray-200 transition-all uppercase text-sm shadow-[0_0_30px_rgba(255,255,255,0.15)]">
             Create Your Free Account
