@@ -65,14 +65,40 @@ export async function POST(req: Request) {
       "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
       "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80"
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
+      "https://images.unsplash.com/photo-1600607686527-6fb886090705?w=800&q=80",
+      "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80",
+      "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80",
+      "https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?w=800&q=80",
+      "https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=800&q=80"
     ];
 
-    // Guarantee randomness on the server side
-    parsed = parsed.map(prop => ({
-      ...prop,
-      images: [imageUrls[Math.floor(Math.random() * imageUrls.length)]]
-    }));
+    // Find images already in use in the DB
+    const existingProperties = await Property.find({}, 'images').lean();
+    const usedImages = new Set(existingProperties.flatMap((p: any) => p.images));
+
+    let availableImages = imageUrls.filter(url => !usedImages.has(url));
+    
+    // Fallback if all images are already used
+    if (availableImages.length === 0) {
+      availableImages = [...imageUrls]; 
+    }
+
+    // Guarantee randomness and absolutely no repeats in the same batch
+    parsed = parsed.map((prop: any) => {
+      const r = Math.floor(Math.random() * availableImages.length);
+      const chosenUrl = availableImages[r];
+      availableImages.splice(r, 1);
+      
+      if (availableImages.length === 0) {
+        availableImages = [...imageUrls];
+      }
+      
+      return {
+        ...prop,
+        images: [chosenUrl]
+      };
+    });
 
     // Insert into DB
     const inserted = await Property.insertMany(parsed);
