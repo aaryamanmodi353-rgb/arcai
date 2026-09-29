@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import mongoose from 'mongoose';
-import { Inventory } from '@/lib/models';
+import Property from '@/models/Property';
 import { Groq } from 'groq-sdk';
 
 const apiKey = process.env.GROQ_API_KEY || '';
@@ -64,7 +64,7 @@ export async function POST(req: Request) {
     }
 
     // Insert into DB
-    const inserted = await Inventory.insertMany(parsed);
+    const inserted = await Property.insertMany(parsed);
 
     return NextResponse.json({ success: true, count: inserted.length, properties: inserted });
 
