@@ -99,39 +99,39 @@ export default async function LandingPage() {
               <p className="text-[#8c94a0] text-lg leading-relaxed">
                 Manage your luxury inventory with unparalleled intelligence. Arc's Deal Room automatically sorts your pipeline based on AI-calculated intent scores (0-99).
               </p>
-              <ul className="space-y-4 mt-8 text-left inline-block">
-                <li className="flex items-start gap-4 text-[#a0a8b5]">
-                  <div className="mt-1 text-[#75c994]"><Icon name="check" size={18} /></div>
-                  <div><strong className="text-white font-oswald tracking-wide uppercase text-sm">Automated Qualification:</strong> The AI extracts missing criteria, budget, and timeline instantly from every lead.</div>
+              <ul className="space-y-8 mt-10 inline-block w-full">
+                <li className="flex flex-col items-center gap-3 text-[#a0a8b5]">
+                  <div className="text-[#75c994] bg-[#75c994]/10 p-2 rounded-full"><Icon name="check" size={20} /></div>
+                  <div><strong className="text-white font-oswald tracking-wide uppercase text-sm block mb-1.5">Automated Qualification</strong> The AI extracts missing criteria, budget, and timeline instantly from every lead.</div>
                 </li>
-                <li className="flex items-start gap-4 text-[#a0a8b5]">
-                  <div className="mt-1 text-[#75c994]"><Icon name="check" size={18} /></div>
-                  <div><strong className="text-white font-oswald tracking-wide uppercase text-sm">Autonomous Agents:</strong> Instruct an AI agent to call or email clients on your behalf. Arc updates the CRM automatically.</div>
+                <li className="flex flex-col items-center gap-3 text-[#a0a8b5]">
+                  <div className="text-[#75c994] bg-[#75c994]/10 p-2 rounded-full"><Icon name="check" size={20} /></div>
+                  <div><strong className="text-white font-oswald tracking-wide uppercase text-sm block mb-1.5">Autonomous Agents</strong> Instruct an AI agent to call or email clients on your behalf. Arc updates the CRM automatically.</div>
                 </li>
-                <li className="flex items-start gap-4 text-[#a0a8b5]">
-                  <div className="mt-1 text-[#75c994]"><Icon name="check" size={18} /></div>
-                  <div><strong className="text-white font-oswald tracking-wide uppercase text-sm">Real-Time Sync:</strong> The moment you approve a deal, the customer's portal updates instantly with a glowing success timeline.</div>
+                <li className="flex flex-col items-center gap-3 text-[#a0a8b5]">
+                  <div className="text-[#75c994] bg-[#75c994]/10 p-2 rounded-full"><Icon name="check" size={20} /></div>
+                  <div><strong className="text-white font-oswald tracking-wide uppercase text-sm block mb-1.5">Real-Time Sync</strong> The moment you approve a deal, the customer's portal updates instantly with a glowing success timeline.</div>
                 </li>
               </ul>
             </div>
-            <div className="w-full max-w-2xl bg-[#11151c]/60 border border-white/5 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden text-left">
+            <div className="w-full max-w-2xl bg-[#11151c]/60 border border-white/5 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden text-center">
               <div className="absolute top-0 right-0 w-64 h-64 bg-[#e8a33b]/10 rounded-full blur-[80px]"></div>
-              <div className="metric-card relative z-10 mb-6 border-white/10">
+              <div className="metric-card relative z-10 mb-8 border-white/10 mx-auto max-w-xs">
                 <p className="eyebrow !tracking-[.1em] !text-[10px] text-[#69717e]">PRIORITY PIPELINE</p>
                 <strong className="text-[#f3bd65]">24 Active</strong>
                 <span>leads in total</span>
               </div>
-              <div className="lead-row relative z-10 !bg-[#151a23] !border-white/10 p-5">
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[#5b4130] text-[#f5c682] flex items-center justify-center font-bold text-sm">JM</div>
+              <div className="lead-row relative z-10 !bg-[#151a23] !border-white/10 p-6 mx-auto max-w-md flex flex-col items-center">
+                <div className="flex flex-col items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-[#5b4130] text-[#f5c682] flex items-center justify-center font-bold text-lg">JM</div>
                   <div>
                     <h4 className="text-white font-bold text-lg">James Miller</h4>
-                    <p className="text-xs text-[#a0a8b5] uppercase tracking-wider">South Mumbai • ₹ 15 Cr • 4 BHK</p>
+                    <p className="text-xs text-[#a0a8b5] uppercase tracking-wider mt-1">South Mumbai • ₹ 15 Cr • 4 BHK</p>
                   </div>
                 </div>
-                <div className="mt-4 flex justify-between items-center">
+                <div className="mt-6 flex justify-center items-center gap-4">
                   <span className="priority border-[#e8a33b] text-[#f5bf68]">HOT <b>99</b></span>
-                  <span className="text-[11px] text-[#8c94a0] uppercase tracking-widest border border-white/10 px-3 py-1 rounded">Urgent Action</span>
+                  <span className="text-[11px] text-[#8c94a0] uppercase tracking-widest border border-white/10 px-3 py-1.5 rounded">Urgent Action</span>
                 </div>
               </div>
             </div>
@@ -147,31 +147,31 @@ export default async function LandingPage() {
               <p className="text-[#8c94a0] text-lg leading-relaxed">
                 Step into a world-class customer dashboard wrapped in dark glassmorphic aesthetics. Apply for properties, track your deals in real-time, and get matched using natural language.
               </p>
-              <ul className="space-y-4 mt-8 text-left inline-block">
-                <li className="flex items-start gap-4 text-[#a0a8b5]">
-                  <div className="mt-1 text-[#75c994]"><Icon name="check" size={18} /></div>
-                  <div><strong className="text-white font-oswald tracking-wide uppercase text-sm">Natural Language Matching:</strong> Don't just click filters. Type exactly what you want (e.g., "Sea-facing duplex under ₹ 20 Cr"), and Arc finds it.</div>
+              <ul className="space-y-8 mt-10 inline-block w-full">
+                <li className="flex flex-col items-center gap-3 text-[#a0a8b5]">
+                  <div className="text-[#75c994] bg-[#75c994]/10 p-2 rounded-full"><Icon name="check" size={20} /></div>
+                  <div><strong className="text-white font-oswald tracking-wide uppercase text-sm block mb-1.5">Natural Language Matching</strong> Don't just click filters. Type exactly what you want (e.g., "Sea-facing duplex under ₹ 20 Cr"), and Arc finds it.</div>
                 </li>
-                <li className="flex items-start gap-4 text-[#a0a8b5]">
-                  <div className="mt-1 text-[#75c994]"><Icon name="check" size={18} /></div>
-                  <div><strong className="text-white font-oswald tracking-wide uppercase text-sm">Live Timelines:</strong> Track your application from 'Under Review' to 'Deal Approved' with instant synchronization.</div>
+                <li className="flex flex-col items-center gap-3 text-[#a0a8b5]">
+                  <div className="text-[#75c994] bg-[#75c994]/10 p-2 rounded-full"><Icon name="check" size={20} /></div>
+                  <div><strong className="text-white font-oswald tracking-wide uppercase text-sm block mb-1.5">Live Timelines</strong> Track your application from 'Under Review' to 'Deal Approved' with instant synchronization.</div>
                 </li>
-                <li className="flex items-start gap-4 text-[#a0a8b5]">
-                  <div className="mt-1 text-[#75c994]"><Icon name="check" size={18} /></div>
-                  <div><strong className="text-white font-oswald tracking-wide uppercase text-sm">Urgent Escalation:</strong> Found the perfect home? Click "Request Urgent Attention" to instantly notify the broker on their dashboard.</div>
+                <li className="flex flex-col items-center gap-3 text-[#a0a8b5]">
+                  <div className="text-[#75c994] bg-[#75c994]/10 p-2 rounded-full"><Icon name="check" size={20} /></div>
+                  <div><strong className="text-white font-oswald tracking-wide uppercase text-sm block mb-1.5">Urgent Escalation</strong> Found the perfect home? Click "Request Urgent Attention" to instantly notify the broker on their dashboard.</div>
                 </li>
               </ul>
             </div>
-            <div className="w-full max-w-2xl bg-[#11151c]/60 border border-white/5 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden text-left">
+            <div className="w-full max-w-2xl bg-[#11151c]/60 border border-white/5 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden text-center">
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-[80px]"></div>
               
-              <div className="relative z-10 border border-white/10 rounded-xl p-6 bg-[#0a0c10]/80">
-                <h4 className="font-display text-2xl text-white mb-4">Application Status</h4>
-                <div className="flex gap-4 items-start relative">
-                  <span className="w-4 h-4 mt-1 rounded-full bg-[#75c994] border-2 border-[#161b22] shadow-[0_0_15px_#75c994] shrink-0 z-10"></span>
+              <div className="relative z-10 border border-white/10 rounded-xl p-8 bg-[#0a0c10]/80 mx-auto max-w-md">
+                <h4 className="font-display text-2xl text-white mb-6">Application Status</h4>
+                <div className="flex flex-col items-center gap-5 relative">
+                  <span className="w-6 h-6 rounded-full bg-[#75c994] border-2 border-[#161b22] shadow-[0_0_15px_#75c994] shrink-0 z-10"></span>
                   <div className="flex flex-col">
                     <span className="text-xs uppercase tracking-[0.2em] text-[#75c994] font-bold">Deal Made / Approved</span>
-                    <p className="text-sm text-white/80 mt-1.5 font-medium leading-relaxed">Congratulations! The admin has approved your deal for this property. The broker will contact you shortly with the next steps.</p>
+                    <p className="text-sm text-white/80 mt-2.5 font-medium leading-relaxed">Congratulations! The admin has approved your deal for this property. The broker will contact you shortly with the next steps.</p>
                   </div>
                 </div>
               </div>
