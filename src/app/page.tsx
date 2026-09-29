@@ -25,7 +25,7 @@ export default async function LandingPage() {
   const dashboardLink = userRole === 'admin' ? '/admin' : '/customer';
 
   return (
-    <div className="min-h-screen bg-transparent text-white selection:bg-[#f3bd65]/30 flex flex-col">
+    <div className="min-h-screen w-full bg-transparent text-white selection:bg-[#f3bd65]/30 flex flex-col">
       {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 lg:px-12 lg:py-6 backdrop-blur-xl bg-[#0a0d12]/70 border-b border-white/5 shadow-2xl">
         <div className="flex items-center gap-3">
