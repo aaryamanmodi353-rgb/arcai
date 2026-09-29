@@ -34,7 +34,7 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
     };
     
     // Build a quick summary of chat history for context
-    const chatSummary = lead.chatHistory?.map(c => `[${c.role}]: ${c.content}`).join('\n') || "No chat history";
+    const chatSummary = lead.chatHistory?.map((c: any) => `[${c.role}]: ${c.content}`).join('\n') || "No chat history";
 
     // Call AI to debrief
     const debrief = await debriefCall(lead.analysis, leadRecord, callNotes, chatSummary);
