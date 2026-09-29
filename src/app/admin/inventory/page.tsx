@@ -7,6 +7,7 @@ export default function InventoryManagement() {
   const [loading, setLoading] = useState(true);
   const [isSyncing, setIsSyncing] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
+  const [deleteConfirmId, setDeleteConfirmId] = useState<string | null>(null);
   const [form, setForm] = useState({ name: '', location: '', price: '', bhk: '', description: '', images: '' });
 
   useEffect(() => {
@@ -48,9 +49,10 @@ export default function InventoryManagement() {
     });
   };
 
-  const handleDelete = async (id: string) => {
-    if (!confirm('Are you sure you want to delete this property?')) return;
-    await fetch(`/api/inventory/${id}`, { method: 'DELETE' });
+  const confirmDelete = async () => {
+    if (!deleteConfirmId) return;
+    await fetch(`/api/inventory/${deleteConfirmId}`, { method: 'DELETE' });
+    setDeleteConfirmId(null);
     fetchProperties();
   };
 
@@ -159,12 +161,25 @@ export default function InventoryManagement() {
               </div>
               <div className="flex flex-col gap-2 shrink-0">
                 <button onClick={() => handleEdit(p)} className="button-secondary text-sm">Edit</button>
-                <button onClick={() => handleDelete(p._id)} className="button-secondary text-sm !text-red-400 border-red-500/20">Delete</button>
+                <button onClick={() => setDeleteConfirmId(p._id)} className="button-secondary text-sm !text-red-400 border-red-500/20">Delete</button>
               </div>
             </div>
           )
         ))}
       </div>
+
+      {deleteConfirmId && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+          <div className="panel max-w-sm w-full p-6 border border-red-500/30 bg-[#0a0d12]">
+            <h3 className="text-xl font-display text-white mb-2">Delete Property?</h3>
+            <p className="text-[#a8b0bb] text-sm mb-6">Are you absolutely sure you want to delete this property? This action cannot be undone.</p>
+            <div className="flex justify-end gap-3">
+              <button onClick={() => setDeleteConfirmId(null)} className="button-secondary px-4 py-2 text-sm">Cancel</button>
+              <button onClick={confirmDelete} className="bg-red-500/10 border border-red-500/40 text-red-400 hover:bg-red-500 hover:text-white transition-colors rounded px-4 py-2 text-sm font-semibold">Delete</button>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }

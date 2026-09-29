@@ -18,7 +18,6 @@ export async function POST(req: Request) {
 
     const groq = new Groq({ apiKey });
 
-    // Ask Groq to generate 2 highly detailed, realistic luxury properties in Mumbai
     const prompt = `
       You are an automated real estate market scraper. Generate exactly 2 highly detailed, realistic luxury properties located in Mumbai, India.
       Return the output ONLY as a valid JSON array of objects. Do not include markdown formatting or extra text.
@@ -28,7 +27,12 @@ export async function POST(req: Request) {
       - price: string (e.g., "₹ 25.5 Cr", "₹ 14.0 Cr")
       - bhk: string (e.g., "4 BHK", "5 BHK Penthouse")
       - description: string (2-3 sentences of luxurious, compelling description)
-      - images: array of strings (use exactly this URL for now: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80")
+      - images: array of 1 string. Pick one random URL from this list for each property: 
+        ["https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80", 
+         "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80", 
+         "https://images.unsplash.com/photo-1600607687920-4e2a09be1587?w=800&q=80", 
+         "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80", 
+         "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80"]
     `;
 
     const completion = await groq.chat.completions.create({
