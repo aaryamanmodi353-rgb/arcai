@@ -55,9 +55,6 @@ export default async function LandingPage() {
 
       {/* Hero Section */}
       <main className="flex-1 flex flex-col items-center pt-40 lg:pt-52 px-5 text-center relative z-10 w-full max-w-[1400px] mx-auto">
-        <div className="absolute top-[10%] left-[10%] w-[40rem] h-[40rem] bg-[#f3bd65]/5 rounded-full blur-[150px] pointer-events-none -z-10"></div>
-        <div className="absolute bottom-[20%] right-[10%] w-[30rem] h-[30rem] bg-blue-900/10 rounded-full blur-[150px] pointer-events-none -z-10"></div>
-
         <span className="eyebrow mb-6 text-[#f3bd65] tracking-[0.3em] bg-[#f3bd65]/10 px-4 py-1.5 rounded-full border border-[#f3bd65]/20">The Future of High-End Real Estate</span>
         <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight leading-[1.05] mb-8 max-w-5xl text-white drop-shadow-2xl">
           An Intelligent Deal Room <br className="hidden md:block" />
@@ -118,7 +115,6 @@ export default async function LandingPage() {
               </div>
             </div>
             <div className="w-full max-w-2xl bg-[#11151c]/60 border border-white/5 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden text-center">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-[#e8a33b]/10 rounded-full blur-[80px]"></div>
               <div className="metric-card relative z-10 mb-8 border-white/10 mx-auto max-w-xs">
                 <p className="eyebrow !tracking-[.1em] !text-[10px] text-[#69717e]">PRIORITY PIPELINE</p>
                 <strong className="text-[#f3bd65]">24 Active</strong>
@@ -169,8 +165,6 @@ export default async function LandingPage() {
               </div>
             </div>
             <div className="w-full max-w-2xl bg-[#11151c]/60 border border-white/5 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden text-center">
-              <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-[80px]"></div>
-              
               <div className="relative z-10 border border-white/10 rounded-xl p-8 bg-[#0a0c10]/80 mx-auto max-w-md">
                 <h4 className="font-display text-2xl text-white mb-6">Application Status</h4>
                 <div className="flex flex-col items-center gap-5 relative">
