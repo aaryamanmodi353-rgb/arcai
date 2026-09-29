@@ -35,6 +35,11 @@ export default function Sidebar() {
             <Icon name="sparkle" /> <span>Inventory</span>
           </button>
         </Link>
+        <Link href="/admin/analytics">
+          <button className={pathname === '/admin/analytics' ? 'active' : ''}>
+            <Icon name="dashboard" /> <span>Analytics</span>
+          </button>
+        </Link>
       </nav>
       <div className="sidebar-foot flex-col items-stretch border-t border-white/10 mt-auto text-sm text-gray-400 space-y-4 pt-4">
         <div className="flex items-center gap-2">
