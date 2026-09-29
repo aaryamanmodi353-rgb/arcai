@@ -25,13 +25,13 @@ export default function Sidebar() {
             <Icon name="dashboard" /> <span>Pipeline</span>
           </button>
         </Link>
-        <Link href="/leads/new">
-          <button className={pathname === '/leads/new' ? 'active' : ''}>
+        <Link href="/admin/leads/new">
+          <button className={pathname === '/admin/leads/new' ? 'active' : ''}>
             <Icon name="plus" /> <span>New lead</span>
           </button>
         </Link>
-        <Link href="/inventory">
-          <button className={pathname === '/inventory' ? 'active' : ''}>
+        <Link href="/admin/inventory">
+          <button className={pathname === '/admin/inventory' ? 'active' : ''}>
             <Icon name="sparkle" /> <span>Inventory</span>
           </button>
         </Link>

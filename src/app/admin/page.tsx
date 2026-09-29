@@ -14,12 +14,16 @@ export default function Dashboard() {
   const router = useRouter();
   const [leads, setLeads] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
-  const [showLoader, setShowLoader] = useState(true);
+  const [showLoader, setShowLoader] = useState(false);
   
   const [query, setQuery] = useState('');
   const [filter, setFilter] = useState<'All' | 'Hot' | 'At risk'>('All');
 
   useEffect(() => {
+    if (!sessionStorage.getItem('hasSeenAdminLoader')) {
+      setShowLoader(true);
+    }
+
     fetch('/api/leads')
       .then(res => res.json())
       .then(data => {
@@ -45,8 +49,13 @@ export default function Dashboard() {
   const riskCount = pipelineLeads.filter(l => l.status !== 'withdrawn' && l.priority.atRisk).length;
   const approvedCount = leads.filter(l => l.status === 'approved').length;
 
+  const handleLoaderComplete = () => {
+    sessionStorage.setItem('hasSeenAdminLoader', 'true');
+    setShowLoader(false);
+  };
+
   if (showLoader) {
-    return <AdminLoadingScreen onComplete={() => setShowLoader(false)} />;
+    return <AdminLoadingScreen onComplete={handleLoaderComplete} />;
   }
 
   return (
