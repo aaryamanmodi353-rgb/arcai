@@ -1,71 +1,131 @@
-# Masal AI: FDE Assignment (Round 2)
+<div align="center">
+  <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80" alt="Arc AI Cover" width="100%" style="border-radius: 12px; margin-bottom: 20px;">
 
-This is a small AI-powered web app designed to help real-estate salespeople prioritize inbound leads, prepare for calls, and keep track of follow-up contexts.
+  # Æ Arc AI
+  **A Next-Generation, AI-Powered Real Estate Deal Room & Customer Portal**
 
-## What was Built
-A complete Next.js (App Router) application with a modern UI (shadcn/ui + Tailwind CSS) and a MongoDB backend. The app integrates the Groq API to analyze incoming leads, score them deterministically based on extracted parameters, prepare call briefs, and act as an embedded sales copilot.
+  <p>
+    <img src="https://img.shields.io/badge/Next.js-15.0-black?style=for-the-badge&logo=next.js" alt="Next.js" />
+    <img src="https://img.shields.io/badge/React-19.0-blue?style=for-the-badge&logo=react" alt="React" />
+    <img src="https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=for-the-badge&logo=tailwind-css" alt="Tailwind" />
+    <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb" alt="MongoDB" />
+    <img src="https://img.shields.io/badge/Groq-AI-F3BD65?style=for-the-badge&logo=openai" alt="Groq AI" />
+  </p>
+</div>
 
-### Features:
-1. **Lead Intake:** A form to capture lead details and the customer's raw message.
-2. **AI Analysis & Scoring:** Extracts intents, requirements, objections, and sub-scores. Deterministic logic calculates a final score (0-100) and categorizes leads into Hot/Warm/Cold tiers.
-3. **Conversational Copilot:** A chat interface grounded strictly in the lead's context, assisting salespeople with draft responses or tactical advice.
-4. **Dashboard:** A priority-ranked view of all leads for quick triage.
-5. **Custom Feature - Call Prep & Debrief Loop:**
-   - **Before the Call:** Generates a quick 1-screen call prep brief containing an opener, discovery questions to fill missing info, and likely objections with rebuttals.
-   - **After the Call:** Salesperson pastes raw notes. AI re-analyzes, updates the requirements/objections, and re-scores the lead.
+---
 
-## Architecture Overview
-- **Frontend:** Next.js (React), Tailwind CSS, shadcn/ui.
-- **Backend API:** Next.js API Routes (Serverless deployment ready).
-- **Database:** MongoDB Atlas (Mongoose ORM).
-- **AI Model:** Groq (`llama-3.3-70b-versatile`) via `groq-sdk`. JSON Mode ensures reliable data extraction.
+## 🌟 Overview
 
-### Workflow:
-\`\`\`
-Browser (Next.js UI)
-   │
-   ▼
-Next.js API Routes
-   ├─ POST /api/leads              → AI Analysis → Deterministic Score → MongoDB
-   ├─ GET  /api/leads              → List sorted by score desc
-   ├─ GET  /api/leads/:id          → Fetch lead details
-   ├─ GET  /api/leads/:id/prep     → Generate Call Brief
-   ├─ POST /api/leads/:id/debrief  → AI Re-analyze Notes → Update Score & DB
-   └─ POST /api/leads/:id/chat     → Context-stuffed prompt → AI stream response
-   │
-   ▼
-MongoDB (Atlas) & Groq API
-\`\`\`
+Arc AI is a premium, AI-driven real estate CRM and property exploration platform. It completely reimagines the interaction between real estate brokers and high-net-worth clients by utilizing large language models to automate lead scoring, match properties to complex customer requests, and track pipeline momentum in real-time.
 
-## Key Technical Decisions
-1. **The LLM Extracts, Code Decides:** LLMs are bad at consistent numerical calibration. The AI provides sub-scores (0-10) for components like intent and timeline, but a deterministic TypeScript function computes the final priority score and applies a decay penalty for staleness.
-2. **Schema-Validated Output:** Using `response_format: { type: "json_object" }` with Groq ensures strict JSON generation conforming to expected schemas.
-3. **Context Stuffing over RAG:** Since a single lead's full history fits well within the token limit of Llama 3.3, vector databases and RAG would only introduce chunking errors. Context stuffing is more reliable here.
-4. **Custom Feature Choice:** The Call Prep/Debrief loop directly solves the before/during/after lifecycle. It turns a static AI analysis into a living CRM record.
+Built with a sleek, high-end "glassmorphic" design system, Arc AI provides a seamless two-sided experience:
+- **For Admins:** A powerful "Deal Room" to prioritize hot leads, dispatch AI agents, and monitor pipeline health.
+- **For Customers:** A luxurious portal to explore verified inventory, submit AI-assisted global requests, and track application timelines.
 
-## How to Run Locally
+---
 
-1. Clone the repository.
-2. Install dependencies:
-   \`\`\`bash
+## ✨ Core Features
+
+### 🏢 The Admin Deal Room
+- **AI Lead Scoring:** Every customer interaction is automatically analyzed by AI, assigning a "Hot", "Warm", or "Cold" tier and a priority score (0-99).
+- **Dynamic Pipeline:** Instantly filter between *All*, *Hot to Call*, and *At Risk* leads.
+- **Actionable Insights:** View AI-generated summaries, intent analyses, missing information, and suggested next actions for every lead.
+- **One-Click Workflows:** Approve deals, close requests, or instruct an autonomous AI Agent to handle customer follow-ups.
+- **Momentum Tracking:** Real-time metrics tracking active deals, urgent callbacks, and successfully closed deals.
+
+### 🛋️ The Customer Portal
+- **Premium Aesthetics:** Dark mode, glassmorphic UI, dynamic timelines, and fluid animations.
+- **Smart Exploration:** Browse curated inventory or use the AI Matchmaker to find properties based on natural language descriptions (e.g., *"I want a 4 BHK facing the sea under 10 Cr"*).
+- **Application Tracking:** A live vertical timeline showing real-time updates:
+  - 🟢 Application Submitted
+  - 🟠 Priority Elevated (Urgent)
+  - 🔴 Application Withdrawn / Closed
+  - ✨ Deal Approved
+- **Urgent Attention System:** Customers can request urgent callbacks, instantly bumping their lead to a "Hot" status on the admin side.
+
+---
+
+## 🚀 Tech Stack
+
+- **Framework:** Next.js (App Router), React
+- **Styling:** Tailwind CSS, Lucide Icons, Custom Keyframe Animations
+- **Database:** MongoDB via Mongoose
+- **AI Integration:** Groq API (LLaMA/Mixtral models) for lightning-fast natural language processing and intent extraction.
+- **Authentication:** Custom JWT-based cookie authentication.
+
+---
+
+## 📦 Installation & Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/aaryamanmodi353-rgb/arcai.git
+   cd arcai
+   ```
+
+2. **Install dependencies**
+   ```bash
    npm install
-   \`\`\`
-3. Create a \`.env.local\` file based on \`.env.example\`:
-   \`\`\`env
+   ```
+
+3. **Configure Environment Variables**
+   Create a `.env.local` file in the root directory and add:
+   ```env
    MONGODB_URI=your_mongodb_connection_string
+   JWT_SECRET=your_jwt_secret_key
    GROQ_API_KEY=your_groq_api_key
-   GROQ_MODEL=llama-3.3-70b-versatile
-   \`\`\`
-4. Run the development server:
-   \`\`\`bash
+   ```
+
+4. **Seed the Database**
+   To populate the database with initial verified inventory:
+   ```bash
+   npx ts-node scripts/seed.ts
+   ```
+
+5. **Run the Development Server**
+   ```bash
    npm run dev
-   \`\`\`
-5. Open [http://localhost:3000](http://localhost:3000)
+   ```
+   *The application will be available at [http://localhost:3000](http://localhost:3000).*
 
-## Known Limitations
-- The current chat implementation waits for the full stream to be built in the API route before responding to the frontend to keep the implementation simple. Production would stream chunks directly to the UI.
-- Deterministic staleness decay isn't currently updated on a cron job; it relies on the `daysSinceContact` calculation at runtime (which is currently simplified in `scoring.ts`).
+---
 
-## AI Usage Disclosure
-- **Gemini 3.1 Pro (via Antigravity):** Scaffolded the Next.js boilerplate, generated the Shadcn components setup, drafted the Mongoose models, built the API routes, and styled the Tailwind UI.
-- **Groq API:** Used as the core intelligence engine within the application for lead analysis, call prep, debriefs, and chat.
+## 🛠️ Project Structure
+
+```text
+├── scripts/
+│   └── seed.ts                # Database seeding script
+├── src/
+│   ├── app/
+│   │   ├── (admin)/           # Admin Deal Room routes & layout
+│   │   ├── api/               # Next.js API Routes (Auth, Leads, Customer, AI)
+│   │   ├── customer/          # Customer Portal routes
+│   │   ├── login/             # Authentication
+│   │   └── signup/            # Registration
+│   ├── components/            # Reusable UI components (Icons, Loaders, Sidebar)
+│   ├── lib/
+│   │   ├── ai/                # AI logic, prompt engineering, and Groq integration
+│   │   ├── mongoose.ts        # MongoDB connection handler
+│   │   └── auth.ts            # JWT verification utilities
+│   └── models/                # Mongoose Schemas (User, Lead, Property)
+└── tailwind.config.ts         # Tailwind design tokens
+```
+
+---
+
+## 🔒 Security & Roles
+
+The platform enforces strict role-based access control (RBAC):
+- `admin`: Granted access to `/` (Deal Room), `/leads/[id]`, and `/inventory`.
+- `customer`: Granted access to `/customer`.
+Middleware automatically intercepts and redirects unauthorized requests to their respective dashboards or the login page.
+
+---
+
+## 🤝 Contributing
+Contributions, issues, and feature requests are welcome. Feel free to check [issues page](https://github.com/aaryamanmodi353-rgb/arcai/issues) if you want to contribute.
+
+<div align="center">
+  <i>"A smarter way to manage residential opportunities."</i>
+</div>
