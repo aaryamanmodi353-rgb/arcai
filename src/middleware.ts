@@ -38,6 +38,14 @@ export async function middleware(request: NextRequest) {
       if (role === 'customer') return NextResponse.redirect(new URL('/customer', request.url));
     }
 
+    // Redirect legacy paths
+    if (path === '/inventory') {
+      return NextResponse.redirect(new URL('/admin/inventory', request.url));
+    }
+    if (path.startsWith('/leads/')) {
+      return NextResponse.redirect(new URL('/admin' + path, request.url));
+    }
+
     // Role-based routing restrictions
     if (path.startsWith('/customer') && role !== 'customer') {
       return NextResponse.redirect(new URL('/admin', request.url));
