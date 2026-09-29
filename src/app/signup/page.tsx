@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { Icon } from '@/components/Icon';
 
 export default function Signup() {
   const [name, setName] = useState('');
@@ -39,7 +40,11 @@ export default function Signup() {
   };
 
   return (
-    <div className="flex min-h-screen w-full items-center justify-center p-4">
+    <div className="flex min-h-screen w-full items-center justify-center p-4 relative">
+      <Link href="/" className="absolute top-8 left-8 flex items-center gap-2 text-sm font-medium text-[#8c94a0] hover:text-white transition-colors">
+        <Icon name="arrow" size={16} className="rotate-180" />
+        Back to home
+      </Link>
       <div className="panel w-full max-w-md p-8 border border-white/10 rounded-xl bg-black/40 backdrop-blur-xl">
         <div className="text-center mb-8">
           <div className="brand justify-center mb-2 flex items-center gap-3 text-3xl font-cursive text-white">
