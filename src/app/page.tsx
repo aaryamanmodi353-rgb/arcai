@@ -80,7 +80,7 @@ export default async function LandingPage() {
         <div className="mt-40 mb-20 w-full text-center space-y-40">
           
           {/* Platform Overview */}
-          <div className="max-w-4xl mx-auto mb-20">
+          <div className="max-w-6xl mx-auto mb-20 px-4">
             <h2 style={{ fontFamily: 'var(--font-cursive)' }} className="text-4xl md:text-5xl mb-6 font-normal">How Arc Transforms Real Estate</h2>
             <div className="w-16 h-0.5 bg-[#f3bd65] mx-auto mb-8"></div>
             <p className="text-[#8c94a0] text-lg leading-relaxed">
@@ -89,8 +89,8 @@ export default async function LandingPage() {
           </div>
 
           {/* For Brokers */}
-          <div className="flex flex-col items-center gap-16 max-w-5xl mx-auto">
-            <div className="space-y-6 max-w-3xl">
+          <div className="flex flex-col items-center gap-16 w-full max-w-7xl mx-auto px-4">
+            <div className="space-y-6 max-w-6xl w-full">
               <div className="eyebrow text-[#f3bd65]">For Brokers & Admins</div>
               <h3 style={{ fontFamily: 'var(--font-cursive)' }} className="text-4xl lg:text-5xl leading-tight font-normal">The Ultimate AI Deal Room</h3>
               <p className="text-[#8c94a0] text-lg leading-relaxed">
@@ -139,8 +139,8 @@ export default async function LandingPage() {
           <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent max-w-4xl mx-auto"></div>
 
           {/* For Buyers */}
-          <div className="flex flex-col items-center gap-16 max-w-5xl mx-auto">
-            <div className="space-y-6 max-w-3xl">
+          <div className="flex flex-col items-center gap-16 w-full max-w-7xl mx-auto px-4">
+            <div className="space-y-6 max-w-6xl w-full">
               <div className="eyebrow text-[#f3bd65]">For Luxury Buyers</div>
               <h3 style={{ fontFamily: 'var(--font-cursive)' }} className="text-4xl lg:text-5xl leading-tight font-normal">A Premium Property Portal</h3>
               <p className="text-[#8c94a0] text-lg leading-relaxed">
