@@ -27,11 +27,6 @@ export async function POST(req: Request) {
       - price: string (e.g., "₹ 25.5 Cr", "₹ 14.0 Cr")
       - bhk: string (e.g., "4 BHK", "5 BHK Penthouse")
       - description: string (2-3 sentences of luxurious, compelling description)
-      - images: array of 1 string. Pick one random URL from this list for each property: 
-        ["https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80", 
-         "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80", 
-         "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80", 
-         "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80"]
     `;
 
     const completion = await groq.chat.completions.create({
@@ -65,6 +60,19 @@ export async function POST(req: Request) {
     if (!Array.isArray(parsed)) {
       return NextResponse.json({ error: 'Generated data is not an array' }, { status: 500 });
     }
+
+    const imageUrls = [
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80"
+    ];
+
+    // Guarantee randomness on the server side
+    parsed = parsed.map(prop => ({
+      ...prop,
+      images: [imageUrls[Math.floor(Math.random() * imageUrls.length)]]
+    }));
 
     // Insert into DB
     const inserted = await Property.insertMany(parsed);
