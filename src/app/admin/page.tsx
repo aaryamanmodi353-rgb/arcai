@@ -116,7 +116,7 @@ export default function Dashboard() {
            <div className="p-8 text-center text-sm text-[#69717e]">No leads found.</div>
         ) : (
           filtered.map((lead, i) => (
-            <button onClick={() => router.push(`/leads/${lead._id}`)} key={lead._id} className="lead-row group grid w-full grid-cols-[1.35fr_.75fr_1.8fr_.85fr_.2fr] items-center gap-4 px-5 py-5 text-left" style={{ animationDelay: `${i * 55}ms` }}>
+            <button onClick={() => router.push(`/admin/leads/${lead._id}`)} key={lead._id} className="lead-row group grid w-full grid-cols-[1.35fr_.75fr_1.8fr_.85fr_.2fr] items-center gap-4 px-5 py-5 text-left" style={{ animationDelay: `${i * 55}ms` }}>
               <div className="flex items-center gap-3">
                 <div>
                   <div className="flex items-center gap-3">

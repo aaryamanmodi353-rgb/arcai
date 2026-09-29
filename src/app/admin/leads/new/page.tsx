@@ -39,7 +39,7 @@ export default function NewLead() {
 
       if (res.ok) {
         const lead = await res.json();
-        router.push(`/leads/${lead._id}`);
+        router.push(`/admin/leads/${lead._id}`);
       } else {
         const errorData = await res.json();
         alert(`Error: ${errorData.error}`);
