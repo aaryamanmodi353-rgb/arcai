@@ -5,6 +5,7 @@ import { Icon } from '@/components/Icon';
 export default function InventoryManagement() {
   const [properties, setProperties] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  const [isSyncing, setIsSyncing] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [form, setForm] = useState({ name: '', location: '', price: '', bhk: '', description: '', images: '' });
 
@@ -18,6 +19,21 @@ export default function InventoryManagement() {
     const data = await res.json();
     if (data.properties) setProperties(data.properties);
     setLoading(false);
+  };
+
+  const handleSync = async () => {
+    setIsSyncing(true);
+    try {
+      const res = await fetch('/api/cron/sync', { method: 'POST' });
+      if (res.ok) {
+        await fetchProperties();
+      } else {
+        alert("Failed to sync MLS data.");
+      }
+    } catch (e) {
+      alert("Error syncing data.");
+    }
+    setIsSyncing(false);
   };
 
   const handleEdit = (prop: any) => {
@@ -71,15 +87,24 @@ export default function InventoryManagement() {
           <p className="eyebrow text-[#e9b65e] mb-1">Database</p>
           <h1 className="text-3xl font-display text-white">Inventory Management</h1>
         </div>
-        <button 
-          onClick={() => {
-            setEditingId('new');
-            setForm({ name: '', location: '', price: '', bhk: '', description: '', images: '' });
-          }}
-          className="button-primary"
-        >
-          <Icon name="plus" /> Add Property
-        </button>
+        <div className="flex gap-4">
+          <button 
+            onClick={handleSync}
+            disabled={isSyncing}
+            className="flex items-center gap-2 rounded-lg bg-black/40 border border-[#e8a33b]/40 px-4 py-2 text-sm font-semibold text-[#f4bd6a] hover:bg-[#e8a33b]/10 hover:border-[#e8a33b] transition-all disabled:opacity-50"
+          >
+            <Icon name="sparkle" /> {isSyncing ? 'Scraping Market...' : 'Sync MLS'}
+          </button>
+          <button 
+            onClick={() => {
+              setEditingId('new');
+              setForm({ name: '', location: '', price: '', bhk: '', description: '', images: '' });
+            }}
+            className="button-primary"
+          >
+            <Icon name="plus" /> Add Property
+          </button>
+        </div>
       </div>
 
       <div className="grid gap-6">
