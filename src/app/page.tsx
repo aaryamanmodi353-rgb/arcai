@@ -80,10 +80,10 @@ export default async function LandingPage() {
         </div>
 
         {/* Detailed Explanation Section */}
-        <div className="mt-40 mb-20 w-full text-left space-y-32">
+        <div className="mt-40 mb-20 w-full text-center space-y-40">
           
           {/* Platform Overview */}
-          <div className="text-center max-w-4xl mx-auto mb-20">
+          <div className="max-w-4xl mx-auto mb-20">
             <h2 className="font-display text-4xl md:text-5xl mb-6">How Arc Transforms Real Estate</h2>
             <div className="w-16 h-0.5 bg-[#f3bd65] mx-auto mb-8"></div>
             <p className="text-[#8c94a0] text-lg leading-relaxed">
@@ -92,14 +92,14 @@ export default async function LandingPage() {
           </div>
 
           {/* For Brokers */}
-          <div className="flex flex-col lg:flex-row items-center gap-16">
-            <div className="flex-1 space-y-6">
+          <div className="flex flex-col items-center gap-16 max-w-5xl mx-auto">
+            <div className="space-y-6 max-w-3xl">
               <div className="eyebrow text-[#f3bd65]">For Brokers & Admins</div>
-              <h3 className="font-display text-4xl lg:text-5xl leading-tight">The Ultimate AI <br/> Deal Room</h3>
+              <h3 className="font-display text-4xl lg:text-5xl leading-tight">The Ultimate AI Deal Room</h3>
               <p className="text-[#8c94a0] text-lg leading-relaxed">
                 Manage your luxury inventory with unparalleled intelligence. Arc's Deal Room automatically sorts your pipeline based on AI-calculated intent scores (0-99).
               </p>
-              <ul className="space-y-4 mt-8">
+              <ul className="space-y-4 mt-8 text-left inline-block">
                 <li className="flex items-start gap-4 text-[#a0a8b5]">
                   <div className="mt-1 text-[#75c994]"><Icon name="check" size={18} /></div>
                   <div><strong className="text-white font-oswald tracking-wide uppercase text-sm">Automated Qualification:</strong> The AI extracts missing criteria, budget, and timeline instantly from every lead.</div>
@@ -114,7 +114,7 @@ export default async function LandingPage() {
                 </li>
               </ul>
             </div>
-            <div className="flex-1 w-full bg-[#11151c]/60 border border-white/5 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden">
+            <div className="w-full max-w-2xl bg-[#11151c]/60 border border-white/5 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden text-left">
               <div className="absolute top-0 right-0 w-64 h-64 bg-[#e8a33b]/10 rounded-full blur-[80px]"></div>
               <div className="metric-card relative z-10 mb-6 border-white/10">
                 <p className="eyebrow !tracking-[.1em] !text-[10px] text-[#69717e]">PRIORITY PIPELINE</p>
@@ -137,17 +137,17 @@ export default async function LandingPage() {
             </div>
           </div>
 
-          <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+          <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent max-w-4xl mx-auto"></div>
 
           {/* For Buyers */}
-          <div className="flex flex-col lg:flex-row-reverse items-center gap-16">
-            <div className="flex-1 space-y-6">
+          <div className="flex flex-col items-center gap-16 max-w-5xl mx-auto">
+            <div className="space-y-6 max-w-3xl">
               <div className="eyebrow text-[#f3bd65]">For Luxury Buyers</div>
-              <h3 className="font-display text-4xl lg:text-5xl leading-tight">A Premium Property <br/> Portal</h3>
+              <h3 className="font-display text-4xl lg:text-5xl leading-tight">A Premium Property Portal</h3>
               <p className="text-[#8c94a0] text-lg leading-relaxed">
                 Step into a world-class customer dashboard wrapped in dark glassmorphic aesthetics. Apply for properties, track your deals in real-time, and get matched using natural language.
               </p>
-              <ul className="space-y-4 mt-8">
+              <ul className="space-y-4 mt-8 text-left inline-block">
                 <li className="flex items-start gap-4 text-[#a0a8b5]">
                   <div className="mt-1 text-[#75c994]"><Icon name="check" size={18} /></div>
                   <div><strong className="text-white font-oswald tracking-wide uppercase text-sm">Natural Language Matching:</strong> Don't just click filters. Type exactly what you want (e.g., "Sea-facing duplex under ₹ 20 Cr"), and Arc finds it.</div>
@@ -162,7 +162,7 @@ export default async function LandingPage() {
                 </li>
               </ul>
             </div>
-            <div className="flex-1 w-full bg-[#11151c]/60 border border-white/5 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden">
+            <div className="w-full max-w-2xl bg-[#11151c]/60 border border-white/5 rounded-2xl p-8 backdrop-blur-sm relative overflow-hidden text-left">
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-[80px]"></div>
               
               <div className="relative z-10 border border-white/10 rounded-xl p-6 bg-[#0a0c10]/80">
