@@ -10,6 +10,7 @@
     <img src="https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=for-the-badge&logo=tailwind-css" alt="Tailwind" />
     <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb" alt="MongoDB" />
     <img src="https://img.shields.io/badge/Groq-AI-F3BD65?style=for-the-badge&logo=openai" alt="Groq AI" />
+    <img src="https://img.shields.io/badge/Recharts-22B5BF?style=for-the-badge&logo=react" alt="Recharts" />
   </p>
 </div>
 
@@ -33,6 +34,8 @@ Built with a sleek, high-end "glassmorphic" design system, Arc AI provides a sea
 - **Actionable Insights:** View AI-generated summaries, intent analyses, missing information, and suggested next actions for every lead.
 - **One-Click Workflows:** Approve deals, close requests, or instruct an autonomous AI Agent to handle customer follow-ups.
 - **Momentum Tracking:** Real-time metrics tracking active deals, urgent callbacks, and successfully closed deals.
+- **Visual Analytics Dashboard:** A dedicated Recharts-powered dashboard visualizes pipeline momentum, conversion funnels, and real-time active portfolio value dynamically extracted from AI parses.
+- **Synthetic AI Market Scraper:** A background Cron job endpoint that connects to Groq AI to synthetically scrape, generate, and ingest uniquely validated luxury properties directly into the live inventory database with server-side smart image assignments.
 
 ### 🛋️ The Customer Portal
 - **Premium Aesthetics:** Dark mode, glassmorphic UI, dynamic timelines, and fluid animations.
@@ -50,6 +53,7 @@ Built with a sleek, high-end "glassmorphic" design system, Arc AI provides a sea
 
 - **Framework:** Next.js (App Router), React
 - **Styling:** Tailwind CSS, Lucide Icons, Custom Keyframe Animations
+- **Data Visualization:** Recharts (Dynamic Pipeline & Analytics Graphs)
 - **Database:** MongoDB via Mongoose
 - **AI Integration:** Groq API (LLaMA/Mixtral models) for lightning-fast natural language processing and intent extraction.
 - **Authentication:** Custom JWT-based cookie authentication.
